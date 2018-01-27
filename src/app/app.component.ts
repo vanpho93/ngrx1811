@@ -16,4 +16,6 @@ export class AppComponent {
   }
 
   increase() { this.store.dispatch({ type: 'INCREASE' }); }
+  descrease() { this.store.dispatch({ type: 'DESCREASE' }); }
+  reset() { this.store.dispatch({ type: 'RESET' }); }
 }
