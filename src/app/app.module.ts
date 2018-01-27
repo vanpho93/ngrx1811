@@ -15,4 +15,12 @@ import { AppComponent } from './app.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
+
+/*
+b1. Dinh nghia vung nho dung reducer function
+b2. Tao ra vung nho tu reducer function
+b3. Lay du lieu tu store
+b4. Thay doi du lieu cua store
+*/
