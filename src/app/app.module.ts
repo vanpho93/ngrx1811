@@ -6,14 +6,16 @@ import { AppComponent } from './app.component';
 
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './ngrx/counter';
+import { wordsReducer } from './ngrx/words';
+import { WordFormComponent } from './word-form/word-form.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, WordFormComponent],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    StoreModule.forRoot({ count: counterReducer })
+    StoreModule.forRoot({ count: counterReducer, words: wordsReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

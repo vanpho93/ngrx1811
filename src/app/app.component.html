@@ -1,5 +1,10 @@
 <h3>Khoa Pham online</h3>
-<p>Value: {{ count | async }}</p>
+<!-- <p>Value: {{ count | async }}</p>
 <button (click)="increase()">Increase</button>
 <button (click)="descrease()">Descrease</button>
-<button (click)="reset()">Reset</button>
+<button (click)="reset()">Reset</button> -->
+<app-word-form></app-word-form>
+<div *ngFor="let word of (words | async)">
+    <h3>{{ word.en }}</h3>
+    <p>{{ word.vn }}</p>
+</div>
