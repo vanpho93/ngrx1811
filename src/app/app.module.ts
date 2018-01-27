@@ -8,9 +8,10 @@ import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './ngrx/counter';
 import { wordsReducer } from './ngrx/words';
 import { WordFormComponent } from './word-form/word-form.component';
+import { WordComponent } from './word/word.component';
 
 @NgModule({
-  declarations: [AppComponent, WordFormComponent],
+  declarations: [AppComponent, WordFormComponent, WordComponent],
   imports: [
     BrowserModule,
     FormsModule,
