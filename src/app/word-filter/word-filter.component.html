@@ -1,6 +1,6 @@
 <hr>
 <div>
-  <button>Show all</button>
-  <button>Show memorized</button>
-  <button>Show forgot</button>
+  <button class="btn btn-success" (click)="changeMode('SHOW_ALL');" [disabled]="(filterMode | async) === 'SHOW_ALL'">Show all</button>
+  <button class="btn btn-success" (click)="changeMode('SHOW_MEMORIZED');" [disabled]="(filterMode | async) === 'SHOW_MEMORIZED'">Show memorized</button>
+  <button class="btn btn-success" (click)="changeMode('SHOW_FORGOT');" [disabled]="(filterMode | async) === 'SHOW_FORGOT'">Show forgot</button>
 </div>
