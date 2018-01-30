@@ -4,3 +4,5 @@ export interface Word {
     _id: string;
     isMemorized: boolean;
 }
+
+export type FilterMode = 'SHOW_ALL' | 'SHOW_MEMORIZED' | 'SHOW_FORGET';

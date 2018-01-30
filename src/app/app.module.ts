@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './ngrx/counter';
 import { wordsReducer } from './ngrx/words';
+import { filterModeReducer } from './ngrx/filterMode';
 import { WordFormComponent } from './word-form/word-form.component';
 import { WordComponent } from './word/word.component';
 import { WordFilterComponent } from './word-filter/word-filter.component';
@@ -17,7 +18,7 @@ import { WordFilterComponent } from './word-filter/word-filter.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    StoreModule.forRoot({ count: counterReducer, words: wordsReducer })
+    StoreModule.forRoot({ count: counterReducer, words: wordsReducer, filterMode: filterModeReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
