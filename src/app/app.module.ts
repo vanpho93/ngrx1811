@@ -9,9 +9,10 @@ import { counterReducer } from './ngrx/counter';
 import { wordsReducer } from './ngrx/words';
 import { WordFormComponent } from './word-form/word-form.component';
 import { WordComponent } from './word/word.component';
+import { WordFilterComponent } from './word-filter/word-filter.component';
 
 @NgModule({
-  declarations: [AppComponent, WordFormComponent, WordComponent],
+  declarations: [AppComponent, WordFormComponent, WordComponent, WordFilterComponent],
   imports: [
     BrowserModule,
     FormsModule,

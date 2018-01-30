@@ -4,4 +4,5 @@
 <button (click)="descrease()">Descrease</button>
 <button (click)="reset()">Reset</button> -->
 <app-word-form></app-word-form>
+<app-word-filter></app-word-filter>
 <app-word *ngFor="let word of (words | async)" [wordInfo]="word"></app-word>

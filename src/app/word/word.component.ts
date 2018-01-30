@@ -7,6 +7,7 @@ import { Word } from '../types';
   templateUrl: './word.component.html',
   styleUrls: ['./word.component.css']
 })
+
 export class WordComponent {
   @Input() wordInfo: Word;
   constructor(private store: Store<any>) { }
