@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Word } from '../types';
+import { WordService } from '../word.service';
 
 @Component({
   selector: 'app-word-form',
@@ -11,19 +12,14 @@ export class WordFormComponent implements OnInit {
   txtEn = '';
   txtVn = '';
   isMemorized = false;
-  constructor(private store: Store<any>) { }
+  constructor(private store: Store<any>, private wordService: WordService) { }
 
   ngOnInit() {
   }
   add() {
-    const { txtEn, txtVn, isMemorized } = this;
-    const word: Word = {
-      en: txtEn,
-      vn: txtVn,
-      isMemorized,
-      _id: Math.random() + ''
-    };
-    this.store.dispatch({ type: 'ADD_WORD', word });
-    // alert({ txtEn, txtVn, isMemorized });
+    const { txtEn, txtVn } = this;
+    this.wordService.addWord(txtEn, txtVn);
+    this.txtEn = '';
+    this.txtVn = '';
   }
 }

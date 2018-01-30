@@ -1,4 +1,4 @@
-<div *ngIf="(filterMode | async) === 'SHOW_ALL' || ((filterMode | async) === 'SHOW_MEMORIZED' && wordInfo.isMemorized) || ((filterMode | async) === 'SHOW_FORGOT' && !wordInfo.isMemorized)">
+<div *ngIf="shouldShow | async">
     <h3 [style.color]="wordInfo.isMemorized ? 'green' : 'red'">{{ wordInfo.en }}</h3>
     <p>{{ wordInfo.vn }}</p>
     <button (click)="remove();">Remove</button>
