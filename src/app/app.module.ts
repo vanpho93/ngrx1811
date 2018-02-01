@@ -11,9 +11,10 @@ import { filterModeReducer } from './ngrx/filterMode';
 import { WordFormComponent } from './word-form/word-form.component';
 import { WordComponent } from './word/word.component';
 import { WordFilterComponent } from './word-filter/word-filter.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
-  declarations: [AppComponent, WordFormComponent, WordComponent, WordFilterComponent],
+  declarations: [AppComponent, WordFormComponent, WordComponent, WordFilterComponent, SignUpComponent],
   imports: [
     BrowserModule,
     FormsModule,
