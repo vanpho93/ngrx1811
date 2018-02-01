@@ -17,7 +17,7 @@ export class AppComponent {
   constructor(private store: Store<any>, private wordService: WordService) {
     this.count = this.store.pipe(select('count'));
     this.words = this.store.pipe(select('words'));
-    this.wordService.getAllWords();
+    // this.wordService.getAllWords();
   }
 
   increase() { this.store.dispatch({ type: 'INCREASE' }); }

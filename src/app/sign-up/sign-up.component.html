@@ -1,24 +1,26 @@
 <h3>Form sign up</h3>
-<form class="form-group">
+<form class="form-group" [formGroup]="formSignUp">
   <div class="form-group">
     <label>Email</label>
-    <input placeholder="Email" class="form-control">
+    <input placeholder="Email" class="form-control" formControlName="email">
   </div>
   <div class="form-group">
     <label>Name</label>
-    <input placeholder="Name" class="form-control">
+    <input placeholder="Name" class="form-control" formControlName="name">
   </div>
   <div class="form-group">
     <label>Password</label>
-    <input type="password" placeholder="Password" class="form-control">
+    <input type="password" placeholder="Password" class="form-control" formControlName="password">
   </div>
   <div class="form-group">
     <label>Re-password</label>
-    <input type="password" placeholder="Re-password" class="form-control">
+    <input type="password" placeholder="Re-password" class="form-control" formControlName="rePassword">
   </div>
   <div class="form-group">
-    <input type="checkbox">
+    <input type="checkbox" formControlName="isMale">
     <label>Male</label>
   </div>
   <button class="btn btn-success form-control">Submit</button>
 </form>
+<pre>{{ formSignUp.value | json }}</pre>
+<pre>{{ formSignUp.status }}</pre>
