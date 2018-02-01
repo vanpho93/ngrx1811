@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -10,7 +9,7 @@ export class SignUpComponent implements OnInit {
   formSignUp: FormGroup;
   constructor() {
     this.formSignUp = new FormGroup({
-      email: new FormControl(''),
+      email: new FormControl('', Validators.email),
       name: new FormControl(''),
       password: new FormControl(''),
       rePassword: new FormControl(''),
@@ -21,4 +20,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
   }
 
+  signUp() {
+    console.log(this.formSignUp.value);
+  }
 }

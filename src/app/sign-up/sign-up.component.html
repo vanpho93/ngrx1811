@@ -1,5 +1,5 @@
 <h3>Form sign up</h3>
-<form class="form-group" [formGroup]="formSignUp">
+<form class="form-group" [formGroup]="formSignUp" (ngSubmit)="signUp();">
   <div class="form-group">
     <label>Email</label>
     <input placeholder="Email" class="form-control" formControlName="email">
@@ -20,7 +20,7 @@
     <input type="checkbox" formControlName="isMale">
     <label>Male</label>
   </div>
-  <button class="btn btn-success form-control">Submit</button>
+  <button class="btn btn-success" [disabled]="formSignUp.invalid">Submit</button>
 </form>
 <pre>{{ formSignUp.value | json }}</pre>
 <pre>{{ formSignUp.status }}</pre>
