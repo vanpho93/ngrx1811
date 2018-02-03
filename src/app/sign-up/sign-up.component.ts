@@ -12,26 +12,17 @@ export class SignUpComponent implements OnInit {
     this.formSignUp = new FormGroup({
       email: new FormControl('', [Validators.email]),
       name: new FormControl(''),
-      password: new FormControl('', passwordMustMatch(this.formSignUp)),
-      rePassword: new FormControl('', passwordMustMatch(this.formSignUp)),
+      password: new FormControl(''),
+      rePassword: new FormControl(''),
       isMale: new FormControl(true)
-    });
+    }, passwordMustMatch);
   }
 
   ngOnInit() {
   }
 
   signUp() {
-    console.log(this.formSignUp.value);
-  }
-
-  passwordMustMatch() {
-    if (!this || !this.formSignUp) return null;
-    const rePassword = this.formSignUp.get('rePassword');
-    const password = this.formSignUp.get('password');
-    // return email.errors && email.errors.email && email.touched;
-    if (rePassword.value === password.value) return null;
-    return { notMatch: true };
+    console.log(this.formSignUp);
   }
 
   get shouldShowEmailWarning() {
@@ -46,13 +37,9 @@ function bannedName(f: FormControl) {
   return { banned: true };
 }
 
-function passwordMustMatch(formGroup: FormGroup) {
-  return () => {
-    if (!formGroup) return null;
-    const rePassword = formGroup.get('rePassword');
-    const password = formGroup.get('password');
-    // return email.errors && email.errors.email && email.touched;
-    if (rePassword.value === password.value) return null;
-    return { notMatch: true };
-  };
+function passwordMustMatch(f: FormGroup) {
+  const passwordValue = f.get('password').value;
+  const rePasswordValue = f.get('rePassword').value;
+  if (passwordValue === rePasswordValue) return null;
+  return { mustMatch: true };
 }
