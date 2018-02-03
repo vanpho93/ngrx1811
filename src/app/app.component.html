@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="!user && isChecked">
     <h3>Form sign in</h3>
     <form class="form-group" [formGroup]="formSignIn" (ngSubmit)="signIn();">
         <div class="form-group">
@@ -12,4 +12,9 @@
         <button class="btn btn-success">Submit</button>
     </form>
     <pre>{{ formSignIn.value | json }}</pre>
+</div>
+<div class="container" *ngIf="user && isChecked">
+    <h3>User info</h3>
+    <p>Name: {{ user.name }}</p>
+    <p>Email: {{ user.email }}</p>
 </div>
